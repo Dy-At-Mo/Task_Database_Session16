@@ -31,6 +31,9 @@ create table if not exists order_item(
 
 TRUNCATE order_item, orders, customers, books, authors RESTART IDENTITY CASCADE;
 
+-- ---------------------------------------------------------------------
+-- AUTHORS (15)
+-- ---------------------------------------------------------------------
 INSERT INTO authors (name, country) VALUES
  ('George Orwell',           'UK'),
  ('Jane Austen',             'UK'),
@@ -133,7 +136,9 @@ INSERT INTO orders (ordered_at, customer_id) VALUES
  ('2026-03-08 10:10', 7),
  ('2026-04-20 16:00', 1);
 
+------------------------------------------------------------
 -- ORDER ITEMS for orders 1-30: (order_id, book_id, quantity )
+------------------------------------------------------------
 INSERT INTO order_item (order_id, book_id, quantity, cost) VALUES
 (1, 1, 2, 12.99),
 (1, 4, 1, 8.99),
